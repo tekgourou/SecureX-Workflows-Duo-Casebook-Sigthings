@@ -1,3 +1,5 @@
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/tekgourou/SecureX-Workflows-Duo-Casebook-Sigthings)
+
 # Duo SecureX Orchestration workflows
 
 Create SecureX Casebook and Sigthings based on Duo Auth DENIED or FRAUD logs.
