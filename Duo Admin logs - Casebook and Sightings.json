@@ -33,7 +33,24 @@
         "target_default": true
       },
       "target": {
-        "no_target": true
+        "execute_on_target_group": true,
+        "target_group": {
+          "target_group_id": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+          "run_on_all_targets": false,
+          "selected_target_types": [
+            "web-service.endpoint"
+          ],
+          "use_criteria": {
+            "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+            "conditions": [
+              {
+                "operator": "eq",
+                "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                "right_operand": "Duo"
+              }
+            ]
+          }
+        }
       }
     },
     "object_type": "definition_workflow",
@@ -58,9 +75,20 @@
           },
           "skip_execution": false,
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01J3A78705B445iJVNwUAxCCDk1nqeNncIM",
-            "target_type": "web-service.endpoint"
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "Duo"
+                  }
+                ]
+              }
+            }
           },
           "workflow_id": "definition_workflow_01JYONCDVQVZ62K7SkNWdQCuAPUgfdRcFAF"
         },
@@ -160,9 +188,20 @@
           },
           "skip_execution": false,
           "target": {
-            "override_workflow_target": true,
-            "target_id": "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL",
-            "target_type": "web-service.endpoint"
+            "override_workflow_target_group_criteria": true,
+            "target_group": {
+              "run_on_all_targets": false,
+              "use_criteria": {
+                "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                "conditions": [
+                  {
+                    "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                    "operator": "eq",
+                    "right_operand": "CTR Target for access token"
+                  }
+                ]
+              }
+            }
           },
           "workflow_id": "definition_workflow_01779LB6MV0P02kvka9TGV5cEam84NrCTy4"
         },
@@ -356,9 +395,20 @@
               },
               "skip_execution": false,
               "target": {
-                "override_workflow_target": true,
-                "target_id": "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz",
-                "target_type": "web-service.endpoint"
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "run_on_all_targets": false,
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                        "operator": "eq",
+                        "right_operand": "Private_CTIA_Target"
+                      }
+                    ]
+                  }
+                }
               },
               "workflow_id": "definition_workflow_01DS6ELBOO8YR3uFJZju566LqiqR18VlE6r"
             },
@@ -392,8 +442,19 @@
               },
               "skip_execution": false,
               "target": {
-                "override_workflow_target": true,
-                "target_id": "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz"
+                "override_workflow_target_group_criteria": true,
+                "target_group": {
+                  "use_criteria": {
+                    "choose_target_using_algorithm": "choose_first_with_matching_criteria",
+                    "conditions": [
+                      {
+                        "left_operand": "$targetgroup.web-service endpoint.input.display_name$",
+                        "operator": "eq",
+                        "right_operand": "Private_CTIA_Target"
+                      }
+                    ]
+                  }
+                }
               }
             },
             "object_type": "definition_activity"
@@ -440,73 +501,27 @@
       "object_type": "schedule"
     }
   },
-  "targets": {
-    "definition_target_01J3A78705B445iJVNwUAxCCDk1nqeNncIM": {
-      "unique_name": "definition_target_01J3A78705B445iJVNwUAxCCDk1nqeNncIM",
-      "name": "Duo",
-      "title": "Duo",
-      "type": "web-service.endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "disable_certificate_validation": false,
-        "display_name": "Duo",
-        "host": "api-dd9523a4.duosecurity.com",
-        "ignore_proxy": true,
-        "no_runtime_user": true,
-        "protocol": "https"
-      }
-    },
-    "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL": {
-      "unique_name": "definition_target_01JFR9G92ZGUP7SvCBlOa9kEQ0duoT1ZqpL",
-      "name": "CTR_For_Access_Token",
-      "title": "CTR Target for access token",
-      "type": "web-service.endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "default_runtime_user_id": "definition_runtime_user_01JFR9F2QXC1S5hgf7tT7VE3mD7UMIbPc9g",
-        "description": "CTR_For_Access_Token",
-        "disable_certificate_validation": false,
-        "display_name": "CTR_For_Access_Token",
-        "host": "visibility.amp.cisco.com",
-        "no_runtime_user": false,
-        "path": "/iroh",
-        "protocol": "https"
-      }
-    },
-    "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz": {
-      "unique_name": "definition_target_01JFR9GPKB5YW3wQR95oQmbTfKKtVKpVbCz",
-      "name": "Private_CTIA_Target",
-      "title": "Private_CTIA_Target",
-      "type": "web-service.endpoint",
-      "base_type": "target",
-      "object_type": "definition_target",
-      "properties": {
-        "description": "Private_CTIA_Target",
-        "disable_certificate_validation": false,
-        "display_name": "Private_CTIA_Target",
-        "host": "private.intel.amp.cisco.com",
-        "no_runtime_user": true,
-        "protocol": "https"
-      }
-    }
-  },
-  "runtime_users": {
-    "definition_runtime_user_01JFR9F2QXC1S5hgf7tT7VE3mD7UMIbPc9g": {
-      "unique_name": "definition_runtime_user_01JFR9F2QXC1S5hgf7tT7VE3mD7UMIbPc9g",
-      "name": "CTR_Credentials",
-      "title": "CTR_Credentials",
-      "description": "Account Key for CTR",
-      "type": "runtime_user.web-service_basic_credentials",
-      "base_type": "runtime_user",
-      "object_type": "definition_runtime_user",
-      "properties": {
-        "auth_option": "*****",
-        "basic_password": "*****",
-        "basic_username": "*****",
-        "display_name": "CTR_Credentials"
-      }
+  "target_groups": {
+    "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH": {
+      "unique_name": "target_group_01EJ0TQWPQWBD0qiWqClJKj9FOzwiZRfOFH",
+      "name": "Default TargetGroup",
+      "title": "Default TargetGroup",
+      "type": "generic.target_group",
+      "base_type": "target_group",
+      "version": "1.0.0",
+      "targets": [
+        {
+          "data_target_type": "web-service.endpoint",
+          "view_target_type": "web-service.endpoint",
+          "include_all_targets": true
+        },
+        {
+          "data_target_type": "email.smtp_endpoint",
+          "view_target_type": "email.smtp_endpoint",
+          "include_all_targets": true
+        }
+      ],
+      "object_type": "target_group"
     }
   },
   "variables": {
