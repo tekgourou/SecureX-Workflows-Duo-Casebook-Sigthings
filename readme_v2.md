@@ -48,6 +48,7 @@ This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour or wait for fra
   
 - Create a IMAP target and event
 
+![image](./Screen_Shot_email_event.png)
 
 # Import these workflows into SecureX Orchestration as atomic workflows:
   
