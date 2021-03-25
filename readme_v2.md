@@ -74,7 +74,7 @@ Refence for best practice and documentation https://ciscosecurity.github.io/sxo-
 
 - Duo Admin - Block User By Username.json  
 
-  This Atomics workflow action block a Duo user based on username. (Work only if the Duo user is local - not sync with Azure AD or Win AD)
+  This Atomics action block a Duo user based on username. (Work only if the Duo user is local - not sync with Azure AD or Win AD)
   credit to https://github.com/Gyuri1/duo-sxo
   
 - Quarantine Duo User.json
