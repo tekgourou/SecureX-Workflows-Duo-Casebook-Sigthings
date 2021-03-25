@@ -23,7 +23,8 @@ For any questions or comments/bugs please reach out to me at alexandre@argeris.n
 # Main workflows:
 
 - Events - Cisco Secure Access Fraud _ Deny auth.json  
-This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour or wait for fraud alert email from Duo admin portal and parse the output to create a casebook and sigthings in SecureX platform. 
+
+This workflow will fetch Duo FRAUD logs detail from a Duo Fraud Email alert and Deny logs every 1hour. Detail will be parse to create a casebook and sigthings in SecureX platform. 
   
 ![image](./Screen_Shot_casebook_workflow_v2.png)
 <br/>  
