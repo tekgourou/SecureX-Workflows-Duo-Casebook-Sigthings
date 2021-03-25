@@ -13,11 +13,11 @@ Use cases :
 
 For any questions or comments/bugs please reach out to me at alexandre@argeris.net or aargeris@cisco.com
 
-![image](./Screen_Shot_Duo_fraud_casebook.png)
+![image](./img/Screen_Shot_Duo_fraud_casebook.png)
 <br/>
-![image](./Screen_Shot_Duo_CTR.png)
+![image](./img/Screen_Shot_Duo_CTR.png)
 <br/>
-![image](./Screen_Shot_Duo_Sigthings.png)
+![image](./img/Screen_Shot_Duo_Sigthings.png)
 <br/>
 
 # Main workflows:
