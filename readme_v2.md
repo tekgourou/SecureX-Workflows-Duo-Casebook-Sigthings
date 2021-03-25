@@ -38,6 +38,9 @@ This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour or wait for fra
   - Admin Integration Key (iKey), Host as a string variables [duo_admin_ikey], [duo_host]
   - Admin Secret Key (sKey) as a Secure string variable [duo_admin_skey]
 
+- From the Duo Admin portal, configure Fraud Email Alert to be send to your IMAP account
+![image](./Screen_Shot_duo_email_fraud_alert.png)
+
 
 - Create the Duo Target based on the hostname in the Cisco SecureX Orchestration. 
 
