@@ -29,6 +29,7 @@ This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour or wait for fra
 <br/>  
 
 # Prerequisites:
+Refence for best practice and documentation https://ciscosecurity.github.io/sxo-05-security-workflows/
 
 - Create an Admin API application in Duo and save the credentials.
     https://duo.com/docs/adminapi
