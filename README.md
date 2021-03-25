@@ -26,7 +26,7 @@ For any questions or comments/bugs please reach out to me at alexandre@argeris.n
 
 This workflow will fetch Duo FRAUD logs detail from a Duo Fraud Email alert and Deny logs every 1hour. Detail will be parse to create a casebook and sigthings in SecureX platform. 
   
-![image](./Screen_Shot_casebook_workflow_v2.png)
+![image](./img/Screen_Shot_casebook_workflow_v2.png)
 <br/>  
 
 # Prerequisites:
@@ -41,7 +41,7 @@ Refence for best practice and documentation https://ciscosecurity.github.io/sxo-
   - Admin Secret Key (sKey) as a Secure string variable [duo_admin_skey]
 
 - From the Duo Admin portal, configure Fraud Email Alert to be send to your IMAP account
-![image](./Screen_Shot_duo_email_fraud_alert.png)
+![image](./img/Screen_Shot_duo_email_fraud_alert.png)
 
 
 - Create the Duo Target based on the hostname in the Cisco SecureX Orchestration. 
@@ -53,7 +53,7 @@ Refence for best practice and documentation https://ciscosecurity.github.io/sxo-
   
 - Create a IMAP target and event
 
-![image](./Screen_Shot_email_event.png)
+![image](./img/Screen_Shot_email_event.png)
 
 # Import these workflows into SecureX Orchestration as atomic workflows:
   
