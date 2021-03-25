@@ -1,8 +1,8 @@
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/tekgourou/SecureX-Workflows-Duo-Casebook-Sigthings)
 
-# Duo SecureX Orchestration workflows
+# Cisco Secure Access by Duo - SecureX Orchestration workflows
 
-Create SecureX Casebook and Sigthings based on Duo Auth DENIED or FRAUD logs.
+Create SecureX Casebook and Sigthings based on Cisco Secure Access by Duo Auth DENIED or FRAUD logs.
 
 Use cases : 
   - Track compromised Duo accounts
@@ -22,7 +22,56 @@ For any questions or comments/bugs please reach out to me at alexandre@argeris.n
 
 # Main workflows:
 
-- Duo Admin logs - Casebook and Sightings.json
+- Events - Cisco Secure Access Fraud _ Deny auth.json  
+This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour or wait for fraud alert email from Duo admin portal and parse the output to create a casebook and sigthings in SecureX platform. 
+  
+![image](./Screen_Shot_casebook_workflow_v2.png)
+<br/>  
+
+# Prerequisites:
+
+- Create an Admin API application in Duo and save the credentials.
+    https://duo.com/docs/adminapi
+    
+- Copy these credentials into Cisco SecureX Orchestration variable section:
+
+  - Admin Integration Key (iKey), Host as a string variables [duo_admin_ikey], [duo_host]
+  - Admin Secret Key (sKey) as a Secure string variable [duo_admin_skey]
+
+
+- Create the Duo Target based on the hostname in the Cisco SecureX Orchestration. 
+
+  - Give a name, like "Duo"
+  - No account keys: True
+  - HTTPS protocol, host/IP address: API hostname
+  - Proxy: Ignore Proxy
+  
+- Create a IMAP target and event
+
+
+# Import these workflows into SecureX Orchestration as atomic workflows:
+  
+- Threat Response v2 - Generate Access Token.json from https://github.com/CiscoSecurity/sxo-05-security-workflows/tree/Main/Atomics
+  This Atomic workflow action will get CTR access token.
+
+- Threat Response v2 - Create Casebook.json from https://github.com/CiscoSecurity/sxo-05-security-workflows/tree/Main/Atomics
+  This Atomic workflow actions will create Casebook.  
+  
+- Duo Admin - Get DENIED or FRAUD Auth Logs.json from this repo
+  This Atomic workflow action will fetch Duo auth denied and fraud logs.
+
+
+# Remediation workflows
+
+- Duo Admin - Block User By Username.json  
+
+  This Atomics workflow action block a Duo user based on username. (Work only if the Duo user is local - not sync with Azure AD or Win AD)
+  credit to https://github.com/Gyuri1/duo-sxo
+  
+- Quarantine Duo User.json
+  This workflow give you access to quarantine user in Duo from the SecureX AO contextuel menu.
+  
+- Azure AD - lockdown user (not documented yet)
   This workflow will fetch Duo (DENIDED or FRAUD) logs every 1hour (can be set by modifying the variable - interval - ) and parse the output to create a casebook and sigthings in SecureX platform. 
   
 ![image](./Screen_Shot_casebook_workflow.png)
